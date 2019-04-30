@@ -1,3 +1,12 @@
 php artisan tinker
 
-App\Product::create(['title' => 'Notebook', 'description' => 'kaskakaka'])
+$product = App\Product::find(1)
+
+$product->toArray()
+
+$product->toJson()
+
+echo $product
+
+\App\Product::find(1)->makeVisible('title')->toArray()
+\App\Product::find(1)->makeHidden('description')->toArray()

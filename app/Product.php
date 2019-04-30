@@ -15,6 +15,24 @@ class Product extends Model
         'title', 'description',
     ];
 
+    /**
+     * The accessors to append to the model's array form.
+     *
+     * @var array
+     */
+    protected $appends = [
+        'resume_title'
+    ];
+
+    /**
+     * The attributes that should be hidden for arrays.
+     *
+     * @var array
+     */
+    protected $hidden = [
+        'title'
+    ];
+
     public function getResumeTitleAttribute()
     {
         if(isset($this->attributes['title'][3])) {
