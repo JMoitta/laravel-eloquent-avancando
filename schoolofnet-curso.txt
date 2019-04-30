@@ -1,1 +1,3 @@
 php artisan tinker
+
+App\Product::create(['title' => 'Notebook', 'description' => 'kaskakaka'])
