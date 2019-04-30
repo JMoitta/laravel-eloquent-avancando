@@ -1,7 +1,11 @@
-php artisan
+// db:seed
 
-php artisan make:model --help
+php artisan make:seeder ProductSeeder
 
-php artisan make:model --all Product
+// php artisan db:seed
 
-php artisan migrate:refresh
+php artisan db:seed --class=ProductSeeder
+
+php artisan tinker
+
+$products = App\Product::all()
