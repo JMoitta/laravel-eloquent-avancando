@@ -1,11 +1,25 @@
-// db:seed
+php artisan tinker
 
-php artisan make:seeder ProductSeeder
+DB::select('select * from products where id > 95')
 
-// php artisan db:seed
+DB::select('select * from products where id > ?', [99])
+
+DB::select('insert into products (title, description) values (?, ?)', ['Notebook', 'Descrição deste notebook'])
+
+\App\Product::all()
+
+DB::update('update products set title=? where id=?', ['Notebook Samsung', 101])
+
+DB::delete('delete from products where id=?', [101])
+
+DB::statement('drop table products')
+
+\App\Product::all()
+
+php artisan migrate:refresh
 
 php artisan db:seed --class=ProductSeeder
 
 php artisan tinker
 
-$products = App\Product::all()
+\App\Product::all()
