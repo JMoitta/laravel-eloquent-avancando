@@ -1,5 +1,5 @@
-DB::table('')
+php artisan tinker
 
-App\Product::where('id', '>', 1)->sharedLock()->get()
+App\Product::find(100)
 
-App\Product::where('id', '>', 1)->lockForUpdate()->get()
+App\Product::find(100)->title
