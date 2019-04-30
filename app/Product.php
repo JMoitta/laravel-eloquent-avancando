@@ -6,6 +6,15 @@ use Illuminate\Database\Eloquent\Model;
 
 class Product extends Model
 {
+    /**
+     * The attributes that are mass assignable.
+     *
+     * @var array
+     */
+    protected $fillable = [
+        'title', 'description',
+    ];
+
     public function getResumeTitleAttribute()
     {
         if(isset($this->attributes['title'][3])) {
@@ -13,5 +22,10 @@ class Product extends Model
         }
 
         return $this->attributes['title'];
+    }
+
+    public function setTitleAttribute($value)
+    {
+        $this->attributes['title'] = \strtoupper($value);
     }
 }

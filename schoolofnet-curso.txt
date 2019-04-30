@@ -1,5 +1,1 @@
 php artisan tinker
-
-App\Product::find(100)
-
-App\Product::find(100)->title
