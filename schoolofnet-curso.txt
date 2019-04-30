@@ -1,3 +1,7 @@
-touch database/database.sqlite
+php artisan
 
-php artisan migrate
+php artisan make:model --help
+
+php artisan make:model --all Product
+
+php artisan migrate:refresh
