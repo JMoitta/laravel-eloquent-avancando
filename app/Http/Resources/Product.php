@@ -14,13 +14,13 @@ class Product extends JsonResource
      */
     public function toArray($request)
     {
-        // $deleted = $this->deleted ? 'yes' : 'not';
+        $deleted = $this->deleted ? 'yes' : 'not';
         return [
             'identify' => $this->id,
             'title' => $this->title,
             'body' => $this->description,
             // 'activated' => $this->activated,
-            // 'deleted' => $deleted,
+            'deleted' => $deleted,
             'created' => $this->created_at,
             'updated' => $this->updated_at,
             'links' => [

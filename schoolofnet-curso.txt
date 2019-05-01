@@ -1,5 +1,3 @@
-php artisan serve
+php artisan migrate:refresh
 
-php artisan make:resource Product
-
-php artisan make:resource Products --collection
+php artisan db:seed --class=ProductSeeder
