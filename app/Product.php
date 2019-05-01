@@ -2,7 +2,9 @@
 
 namespace App;
 
+use App\Scopes\ActivatedScope;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 
 class Product extends Model
@@ -33,6 +35,13 @@ class Product extends Model
     protected $hidden = [
         'title'
     ];
+
+    protected static function boot()
+    {
+        parent::boot();
+
+        static::addGlobalScope(new ActivatedScope());
+    }
 
     public function getResumeTitleAttribute()
     {
