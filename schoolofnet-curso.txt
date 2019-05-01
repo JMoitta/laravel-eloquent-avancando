@@ -1,5 +1,7 @@
 php artisan serve
 
-php artisan migrate:refresh
+php artisan event:generate
 
-php artisan db:seed --class=ProductSeeder
+php artisan tinker
+
+App\Product::create(['title' => 'Produto', 'description' => 'asdasd', 'activated' => 1])

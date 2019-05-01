@@ -15,7 +15,7 @@ class Product extends Model
      * @var array
      */
     protected $fillable = [
-        'title', 'description',
+        'title', 'description', 'activated'
     ];
 
     /**
@@ -34,6 +34,26 @@ class Product extends Model
      */
     protected $hidden = [
         'title'
+    ];
+
+    /**
+     * retrieving
+     * retrieved
+     * saving
+     * saved
+     * creating
+     * created
+     * updating
+     * updated
+     * deleting
+     * deleted
+     * restoring
+     * restored
+     */
+    
+    protected $dispatchesEvents = [
+        'created' => \App\Events\ProductsCreated::class,
+        'creating' => \App\Events\ProductsCreating::class,
     ];
 
     protected static function boot()
