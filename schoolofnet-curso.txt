@@ -1,12 +1,5 @@
-php artisan tinker
+php artisan serve
 
-$product = App\Product::find(1)
+php artisan make:resource Product
 
-$product->toArray()
-
-$product->toJson()
-
-echo $product
-
-\App\Product::find(1)->makeVisible('title')->toArray()
-\App\Product::find(1)->makeHidden('description')->toArray()
+php artisan make:resource Products --collection
