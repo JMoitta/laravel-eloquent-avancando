@@ -11,5 +11,8 @@ $factory->define(Product::class, function (Faker $faker) {
         'description' => implode(' ', $faker->paragraphs()),
         'deleted_at' => null,
         'activated' => rand(0, 1),
+        // 'user_id' => function() {
+        //     return factory(\App\User::class)->create()->id;
+        // }
     ];
 });
